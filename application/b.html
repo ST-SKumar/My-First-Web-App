@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
+	<title>Decimal 2 Binary</title>
+
+	<!--style>
+input {
+	border: 2px solid #2e9afd;
+    resize: none;
+	overflow:hidden;
+	outline:none;
+}
+</style-->
+	
+	<script>
+		function abc()
+		{
+			// body...
+			n=encodeURIComponent(document.getElementById("decimal").value);
+			b="";
+			a="";
+			c="";
+			j=1;
+
+			for(i=0; i < n; i++) {
+				a+=parseInt(n)%2+"";
+				c=parseInt(n)%2;
+				n=parseInt(n)/2;
+				b+=j+" - "+parseInt(n)+" - "+c+"<br>";
+				i=i-1;
+				j++;
+				if(parseInt(n)==0)break;
+			}
+			a = a.split("");
+			a = a.reverse();
+			a = a.join("");
+			document.getElementById("demo").innerHTML=a;
+			document.getElementById("demo1").innerHTML=b;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		Enter Decimal Number<br>
+		<input type="number" class="form-control" placeholder="Enter Number" id="decimal"/><br>
+		<!--input type="button" style="outline: none;" value="Convert" onClick="abc()"/-->
+		<button type="button" class="btn btn-outline-primary" onClick="abc()">Convert</button>
+		<div class="alert alert-primary" id="demo"></div><br>
+		<div class="alert alert-warning" id="demo1"></div>
+	</center>
+	
+
+	
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
