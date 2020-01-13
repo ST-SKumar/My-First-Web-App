@@ -12,27 +12,14 @@
 <body>
 	<div class="container"><br><br>
 		<div class="form-group row">
-			<label>Decimal</label>
-			<label>:</label>
-			<input oninput="dec(this.value)" id="dec"/><br><br>
-			<label>Binary</label>
-			<label>:</label>
-			<input oninput="bin(this.value)" id="bin"/><br><br>
-			<label>Hexadecimal</label>
-			<label>:</label>
-			<input oninput="hex(this.value)" id="hex"/>
+			<label>Decimal</label> <label>:</label> <input/><br><br>
+			<label>Binary</label> <label>:</label> <input/><br><br>
+			<label>Hexadecimal</label> <label>:</label> <input/>
 			<div> . </div>
 			<div> . </div>
 		</div>
-			<p class="" style="text-align: center;"><strong>Note:</strong> This input type cannot contain null value.</p>
+		<center><strong>Note : </strong>This input type cannot contain null value.</center>
 	</div>
-	<script>
-	$('input').addClass('form-control col-3');
-	$('label').addClass('col-1 col-form-label');
-	$('label').prev('label').addClass('offset-4');
-	$('label').next('label').addClass('offset-1');
-	$('div > div > div').addClass('col-6 offset-6');
-	gitCorner("https://github.com/ST-SKumar/convert");as();
-	</script>
+	<script src="git.js"></script><script>gitCorner('https://github.com/ST-SKumar/convert');</script> <script src="index.js"></script>
 </body>
 </html>
