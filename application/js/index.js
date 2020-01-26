@@ -1,6 +1,11 @@
-dv='0',bv='0',hv='0',x=$('input'), d=x.eq(0),b=x.eq(1),h=x.eq(2);$('label').addClass('col-1 col-form-label');
-x.addClass('form-control col-3');$('label').prev('label').addClass('offset-4');$('label').next('label').addClass('offset-1');$('div > div > div').addClass('col-6 offset-6');
-function c(s,f,t){return parseInt(s, f).toString(t);} function b2h(s){return c(n,2,16);}function as(){d.val(dv);b.val(bv);h.val(hv);}as();
-x.on("input",function(){n=$(this).val(); if(n==d.val()&&n.match(/^[0-9]+$/)){dv=n; bv=c(n,10,2); hv=c(n,10,16);}
-if(n==b.val()&&n.match(/^[0-1]+$/)){bv=n; dv=c(n,2,10); hv=n.match(/.{1,32}/g).map(b2h).join('');} 
-if(n==h.val()&&n.match(/^[A-Fa-f0-9]+$/)){hv=n; dv=c(n,16,10); bv=c(n,16,2);} as();});
+dv='',bv='',hv='',av='',np='input',x=$(np),la='label',l=$(la), d=x.eq(0),b=x.eq(1),h=x.eq(2);a=x.eq(3);
+x.on(np,function(){n=$(this).val();y=x.index(this);
+	if(y==0&&n.match(/^[0-9]+$/)){dv=n; bv=c(n,10,2); hv=c(n,10,16); av=String.fromCharCode(n);}
+	else if(n!=''){if(y==1&&n.match(/^[0-1]+$/)){dv=c(n,2,10);}
+	if(y==2&&n.match(/^[A-Fa-f0-9]+$/)){dv=c(n,16,10);}
+	if(y==3){dv=n.charCodeAt();} d.val(dv); d.trigger(np);} as(n);
+});
+function c(s,f,t){return parseInt(s, f).toString(t);}
+function as(n){if(n==''){dv='',bv='',hv='',av='';}d.val(dv);b.val(bv);h.val(hv);a.val(av);}
+
+l.addClass('col-1 col-form-label'); l.prev(la).addClass('offset-3'); l.next(la).addClass('offset-1'); x.addClass('form-control col-3');$("<br><br>").insertAfter(x);
